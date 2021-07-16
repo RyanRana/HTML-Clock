@@ -1,0 +1,333 @@
+<html>
+    <body>
+        <div id="clock"></div>
+        <div id="sec"></div>
+        <div id="min"></div>
+        <div id="hour"></div>
+        <button id = "standard" onclick = "st()">Standard</button>
+        <button id = "co" onclick = "rain()">Color Splash</button>
+        <button id = "fall" onclick="f()">Autuom</button>
+        <button id ="sea" onclick="sa()">Ocean</button>
+       
+        <br>
+        <button id ="mst" onclick="mst()">MST</button>
+        <button id ="est" onclick="est()">EST</button>
+        <br>
+        <br>
+        <input id = "a" type= "text" value = "Hour">
+        <input id = "b" type= "text" value = "Minute">
+        <br>
+        
+        <button id="alarm" onclick="alarm()">Set up Alarm</button>
+        <br>
+        <br>
+        <button id="snooze" onclick="snooze()">Snooze</button>
+    </body>
+    <style>
+        #standard{
+            background-color: #dddddd; /* Green */
+            border-width: 4px;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        #mst{
+            background-color: #dddddd; /* Green */
+            border-width: 4px;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        #mstr{
+            background-color: #dddddd; /* Green */
+            border-width: 4px;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        #est{
+            background-color: #dddddd; /* Green */
+            border-width: 4px;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        #snooze{
+            background-color: red; /* Green */
+            border-width: 4px;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            visibility: hidden
+        }
+        #co{
+            background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
+            border-width: 4px;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        #fall{
+            background-image: linear-gradient(to right,brown,indianred,yellow); 
+            border-width: 4px;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        #sea{
+            background-image: linear-gradient(to right,darkblue,blue,darkcyan,cyan); 
+            border-width: 4px;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        #clock {
+            position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          height: 500px;
+          width: 500px;
+            border-radius: 100%;
+            border: 3px solid #aaaaaa;
+            margin: auto;
+          background-image:linear-gradient(to right,silver,silver)
+              
+       
+     
+
+        }
+        #sec {
+          position: absolute;
+          height: 160px;
+          width: 2px;
+          left: 0;
+          right: 0;
+          bottom: 160px;
+          top: 0px;
+          margin: auto;
+          background: #000;
+          -webkit-transform-origin: bottom;
+          background: #ff4136;
+
+        }
+        #min {
+          position: absolute;
+          height: 160px;
+          width: 4px;
+          left: 0;
+          right: 0;
+          bottom: 160px;
+          top: 0px;
+          margin: auto;
+          background: #000;
+          -webkit-transform-origin: bottom;
+          background: #2C3E50;
+
+        }
+        #hour {
+          position: absolute;
+          height: 210px;
+          width: 4px;
+          left: 0;
+          right: 0;
+          bottom: 210px;
+          top: 0px;
+          margin: auto;
+          background: #000;
+          -webkit-transform-origin: bottom;
+          background: #2C3E50;
+
+        }
+    </style>
+    <script>
+        d = new Date()
+        s = d.getSeconds()*6
+        m = d.getMinutes()*6
+        h = d.getHours()*30
+        q = d.getMinutes()*0.01
+        h1 = d.getHours()
+        h2 = d.getMinutes()
+        h3 = d.getSeconds()
+        al = new sound("wake.mp3")
+        obj1=0
+        obj2=0
+        hour = 0
+        min = 0
+        part = ""
+        mode = "est"
+        aon = false 
+        var ampm = h >= 12 ? 'pm' : 'am';
+        document.getElementById("sec").style.WebkitTransform = "rotate("+s+"deg)"
+        document.getElementById("min").style.WebkitTransform = "rotate("+m+"deg)"
+        document.getElementById("hour").style.WebkitTransform = "rotate("+h+"deg)"
+        document.getElementById("hour").style.WebkitTransform = "rotate("+q+"deg)"
+
+        function updater(){
+            
+            obj1 += 1
+            if (obj1==59){
+                h2+=1
+                obj1 = 0
+            }
+            obj2 += 1
+            //alert(obj2)
+            if (obj2==3600){
+            //    alert("l")
+                h1+=1
+                obj2 = 0
+            }
+            //alert(h1+"   "+hour)
+            if (h1==hour){
+                
+                if (h2==min){
+                    document.getElementById("clock").style.backgroundImage="linear-gradient(to right,cyan,cyan)"
+                    document.getElementById("snooze").style.visibility="visible"
+                }
+                else{
+              document.getElementById("clock").style.backgroundImage="linear-gradient(to right,silver,silver)"  
+            }
+                
+            }
+            else{
+              document.getElementById("clock").style.backgroundImage="linear-gradient(to right,silver,silver)"  
+            }
+            var color = "#" +Math.random().toString(16).slice(2, 8)
+            s += 6
+            m += 0.1
+            h +=0.01
+            document.getElementById("sec").style.WebkitTransform = "rotate("+s+"deg)"
+            document.getElementById("min").style.WebkitTransform = "rotate("+m+"deg)"
+            document.getElementById("hour").style.WebkitTransform = "rotate("+h+"deg)"
+            document.getElementById("mst").style.backgroundColor = color
+            document.getElementById("est").style.backgroundColor = color
+            setTimeout(updater,1000)
+        }
+        function st(){
+            document.body.style.backgroundImage = "linear-gradient(to right,white,white)"
+        }
+        function rain(){
+            document.body.style.backgroundImage ="linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)"
+        }
+        function f(){
+            document.body.style.backgroundImage = "linear-gradient(to right,brown,indianred,yellow)" 
+        }
+        function sa(){
+            document.body.style.backgroundImage = "linear-gradient(to right,darkblue,blue,darkcyan,cyan)" 
+        }
+        function mst(){
+            if (mode=="est"){
+            h=h-60
+            document.getElementById("hour").style.WebkitTransform = "rotate("+h+"deg)"
+            mode = "mst"
+            }
+        }
+        function est(){
+            if (mode=="mst"){
+            h=h+60
+            document.getElementById("hour").style.WebkitTransform = "rotate("+h+"deg)"
+            mode = "est"
+            }
+        }
+        function alarm(){
+            hour = document.getElementById("a").value
+            min = document.getElementById("b").value
+            part = document.getElementById("c").value
+            //alert(hour+"   "+min+"              "+h1+"          "+h2)
+           
+        }
+        function sound(src) {
+            this.sound = document.createElement("audio");
+            this.sound.src = src;
+            this.sound.setAttribute("preload", "auto");
+            this.sound.setAttribute("controls", "none");
+            this.sound.style.display = "none";
+            document.body.appendChild(this.sound);
+            this.play = function(){
+                this.sound.play();
+            }
+            this.stop = function(){
+                this.sound.pause();
+            }
+        }
+        function snooze(){
+            min = parseInt(min)
+            min+=9
+            min= min.toString()
+            if (min>60){
+                var d = min-60
+                min = d
+                hour = parseInt(hour)
+                hour+=9
+                hour= hour.toString()
+            }
+            alert(min)
+        }
+        updater()
+    </script>
+</html>
