@@ -5,4 +5,4 @@ Gradient Changing Buttons and Background Colors with Buttons
 <br>
 JS alarm clock system, with alert at given times.
 <br>
-You can use this program as in iframe in your websites.
+You can use this program as in iframe in your websites. The website was built to teach basic web development for a series of online classes I thaught this summer[2021].
